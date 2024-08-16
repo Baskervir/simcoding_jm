@@ -11,7 +11,6 @@ class MainTest {
     @Test
     @DisplayName("hi")
     public void t(){
-        System.out.println(1);
         Assertions.assertEquals(1, 1);
     }
 
