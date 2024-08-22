@@ -1,37 +1,57 @@
 package com.simcoding.tdd.passwordCheck;
 
+import com.simcoding.tdd.passwordValidator.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PasswordCheck {
-    public static String check(String password) {
-        boolean hasUpperChar = false;
+    private static final List<PasswordValidator> validators = new ArrayList<>();
+
+    public PasswordCheck() {
+        validators.add(new UpperCaseValidator());
+        validators.add(new LowerCaseValidator());
+        validators.add(new SpecialCharValidator());
+        validators.add(new StarCharValidator());
+        validators.add(new IntegerValidator());
+    }
+        /*boolean hasUpperChar = false;
         boolean hasLowerChar = false;
         boolean hasSpecialChar = false;
         boolean hasStarChar = false;
-        boolean hasInteger = false;
+        boolean hasInteger = false;*/
 
-        // 조건별 비밀번호 검증 단ㄱ{
-        for (char c : password.toCharArray()) {
-            if (Character.isUpperCase(c)) {
-                hasUpperChar = true;
-            }
-            if (Character.isLowerCase(c)) {
-                hasLowerChar = true;
-            }
-            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
-                hasSpecialChar = true;
-            }
-            if (c == '*') {
-                hasStarChar = true;
-            }
-            if (Character.isDigit(c)) {
-                hasInteger = true;
-            }
+    /*// 조건별 비밀번호 검증 단ㄱ{
+    for (char c : password.toCharArray()) {
+        if (Character.isUpperCase(c)) {
+            hasUpperChar = true;
         }
-
+        if (Character.isLowerCase(c)) {
+            hasLowerChar = true;
+        }
+        if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
+            hasSpecialChar = true;
+        }
+        if (c == '*') {
+            hasStarChar = true;
+        }
+        if (Character.isDigit(c)) {
+            hasInteger = true;
+        }
+    }*/
+    public static String checkPassword(String password) {
         if (password == null || password.isEmpty()) {
             return "사용 불가";
         }
 
-        // 정책 준수 여부에 따라 count++;
+        int count = 0;
+        for (PasswordValidator validator : validators) {
+            if (validator.validate(password)) {
+                count++;
+            }
+        }
+
+        /*// 정책 준수 여부에 따라 count++;
         int count = 0;
         // 정책 1 : 영어, 숫자, 특수문자가 1개 이상 반드시 포함.
         if ((hasUpperChar || hasLowerChar) && hasInteger && hasSpecialChar) {
@@ -44,7 +64,7 @@ public class PasswordCheck {
         // 정책 3 : 특수문자 '*' 반드시 1개 이상 포함.
         if (hasStarChar) {
             count++;
-        }
+        }*/
 
         // count 개수 기반으로 강도 출력
         switch (count) {
