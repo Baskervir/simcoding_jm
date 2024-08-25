@@ -1,5 +1,7 @@
 package com.simcoding.design.strategy.character;
 
+import com.simcoding.design.strategy.character.moves.MoveStrategy;
+
 /**
  * @apiNote 캐릭터의 최초 위치는 (0,0)
  * **/

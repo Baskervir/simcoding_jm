@@ -1,7 +1,6 @@
 package com.simcoding.design.strategy.character.moves;
 
 import com.simcoding.design.strategy.character.Direction;
-import com.simcoding.design.strategy.character.MoveStrategy;
 
 /**
  * @apiNote 주어진 방향으로 한 칸씩 이동한다.

@@ -1,7 +1,6 @@
 package com.simcoding.design.strategy.character.moves;
 
 import com.simcoding.design.strategy.character.Direction;
-import com.simcoding.design.strategy.character.MoveStrategy;
 
 public class CarStrategy implements MoveStrategy {
     @Override
