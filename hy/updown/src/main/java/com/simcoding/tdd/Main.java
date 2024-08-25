@@ -33,6 +33,5 @@ public class Main {
             ui.out(result);
             if(result.equals("game over")) break;
         }
-
     }
 }
