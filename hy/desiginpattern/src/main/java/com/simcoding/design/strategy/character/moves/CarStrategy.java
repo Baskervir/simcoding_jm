@@ -2,14 +2,15 @@ package com.simcoding.design.strategy.character.moves;
 
 import com.simcoding.design.strategy.character.Direction;
 
-public class CarStrategy implements MoveStrategy {
+public class CarStrategy extends AbstractTemplateStrategy {
+
     @Override
-    public int moveY(Direction dir, int curY) {
-        return dir.getcY() * 3 + curY;
+    protected int handleY(Direction dir, int curY) {
+        return  dir.getcY() * 3 + curY;
     }
 
     @Override
-    public int moveX(Direction dir, int curX) {
+    protected int handleX(Direction dir, int curX) {
         return dir.getcX() * 3 + curX;
     }
 }

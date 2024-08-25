@@ -12,6 +12,8 @@ import com.simcoding.design.strategy.character.moves.ReportDecorator;
  *
  * **/
 public class Main {
+
+    public static int[][] map = new int[5][5];
     public static void main(String[] args) {
 
         // 캐릭터 시뮬레이션 어플리케이션
@@ -22,6 +24,8 @@ public class Main {
         character.setTransport(new ReportDecorator(new CarStrategy()));
         //클라이언트 코드(MainChaacter)를 변경하지 않고, 기능을 확장
         character.move(Direction.UP);
+        character.move(Direction.DOWN);
+
         character.speakWhereIam();
 
 
