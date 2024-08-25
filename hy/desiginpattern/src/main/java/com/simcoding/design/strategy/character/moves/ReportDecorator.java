@@ -16,17 +16,17 @@ public class ReportDecorator implements MoveStrategy{
 
     @Override
     public int moveY(Direction dir, int curY) {
-        System.out.println("--------- 현재 위치는 "+curY);
+//        System.out.println("--------- 현재 위치는 "+curY);
         int nextY = this.component.moveY(dir, curY);
-        System.out.println("--------- 다음 위치는 "+nextY);
+//        System.out.println("--------- 다음 위치는 "+nextY);
         return nextY;
     }
 
     @Override
     public int moveX(Direction dir, int curX) {
-        System.out.println("---------  현재 위치는 "+curX);
+//        System.out.println("---------  현재 위치는 "+curX);
         int nextX = this.component.moveX(dir, curX);
-        System.out.println("---------  다음 위치는 "+nextX);
+//        System.out.println("---------  다음 위치는 "+nextX);
         return nextX;
     }
 }

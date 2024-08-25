@@ -20,10 +20,11 @@ public class MainCharacter {
         this.transport = transport;
     }
 
-    public void move(Direction dir) {
+    public int[] move(Direction dir) {
 
         this.curY = this.transport.moveY(dir, this.curY);
         this.curX = this.transport.moveX(dir, this.curX);
+        return new int[]{this.curX, this.curY};
     }
 
     public void speakWhereIam() {

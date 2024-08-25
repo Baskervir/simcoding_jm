@@ -2,6 +2,9 @@ package com.simcoding.design.strategy;
 
 import com.simcoding.design.strategy.character.Direction;
 import com.simcoding.design.strategy.character.MainCharacter;
+import com.simcoding.design.strategy.character.config.EnvSettingConfing;
+import com.simcoding.design.strategy.character.config.GameStatisticReporter;
+import com.simcoding.design.strategy.character.config.InitializerFasade;
 import com.simcoding.design.strategy.character.moves.CarStrategy;
 import com.simcoding.design.strategy.character.moves.FootStretegy;
 import com.simcoding.design.strategy.character.moves.ReportDecorator;
@@ -16,6 +19,10 @@ public class Main {
     public static int[][] map = new int[5][5];
     public static void main(String[] args) {
 
+        //요구사항 변경에 따라서, 어플리케이션 기동 시,
+        InitializerFasade facade = new InitializerFasade();
+        facade.config();
+
         // 캐릭터 시뮬레이션 어플리케이션
         MainCharacter character = new MainCharacter(new ReportDecorator(new FootStretegy()));
         character.move(Direction.UP);
@@ -27,8 +34,5 @@ public class Main {
         character.move(Direction.DOWN);
 
         character.speakWhereIam();
-
-
-
     }
 }

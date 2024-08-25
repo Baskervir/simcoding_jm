@@ -8,7 +8,7 @@ import com.simcoding.design.strategy.character.Direction;
 public class FootStretegy extends AbstractTemplateStrategy {
     @Override
     protected int handleY(Direction dir, int curY) {
-        return dir.getcY()+curY;
+        return dir.getcY() + curY;
     }
 
     @Override

@@ -11,16 +11,17 @@ import com.simcoding.design.strategy.character.Direction;
 public abstract class AbstractTemplateStrategy implements MoveStrategy{
     @Override
     public int moveY(Direction dir, int curY) {
-        int cy = dir.getcY() * 3 + curY;
-        if(!(cy < Main.map.length && cy >= 0 )) return curY;
-        return handleY(dir, curY);
+        int next = handleY(dir, curY);
+        if(!(next < Main.map.length && next >= 0 )) return curY;
+        return next;
+
     }
 
     @Override
     public int moveX(Direction dir, int curX) {
-        int cx = dir.getcX() * 3 + curX;
-        if(!(cx < Main.map[0].length && cx >= 0 )) return curX;
-        return handleX(dir, curX);
+        int next = handleX(dir, curX);
+        if(!(next < Main.map[0].length && next >= 0 )) return curX;
+        return handleX(dir, next);
     }
 
     protected abstract int handleY(Direction dir, int curY);
