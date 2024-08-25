@@ -3,7 +3,7 @@ package com.simcoding.design.strategy.character;
 /**
  * @apiNote 캐릭터의 최초 위치는 (0,0)
  * **/
-public class MainCharacter implements MovableCharacter{
+public class MainCharacter {
 
     private int curX = 0;
     private int curY = 0;
@@ -18,14 +18,12 @@ public class MainCharacter implements MovableCharacter{
         this.transport = transport;
     }
 
-    @Override
     public void move(Direction dir) {
 
         this.curY = this.transport.moveY(dir, this.curY);
         this.curX = this.transport.moveX(dir, this.curX);
     }
 
-    @Override
     public void speakWhereIam() {
         System.out.println(String.format("i am not at x %s, y %s", this.curX, this.curY));
     }

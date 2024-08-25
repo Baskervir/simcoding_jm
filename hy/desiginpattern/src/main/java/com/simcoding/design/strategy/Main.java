@@ -2,7 +2,7 @@ package com.simcoding.design.strategy;
 
 import com.simcoding.design.strategy.character.Direction;
 import com.simcoding.design.strategy.character.MainCharacter;
-import com.simcoding.design.strategy.character.MovableCharacter;
+import com.simcoding.design.strategy.character.moves.CarStrategy;
 import com.simcoding.design.strategy.character.moves.FootStretegy;
 
 /**
@@ -14,11 +14,16 @@ public class Main {
     public static void main(String[] args) {
 
         // 캐릭터 시뮬레이션 어플리케이션
-        MovableCharacter character = new MainCharacter(new FootStretegy());
+        MainCharacter character = new MainCharacter(new FootStretegy());
         character.move(Direction.UP);
         character.move(Direction.RIGHT);
-
-
         character.speakWhereIam();
+        character.setTransport(new CarStrategy());
+        //클라이언트 코드(MainChaacter)를 변경하지 않고, 기능을 확장
+        character.move(Direction.UP);
+        character.speakWhereIam();
+
+        
+
     }
 }
