@@ -1,2 +1,5 @@
-package com.simcoding.tdd.password;public class SingleUnitPasswordPolicy {
+package com.simcoding.tdd.password;
+
+public interface SingleUnitPasswordPolicy {
+    boolean validate(String str);
 }
