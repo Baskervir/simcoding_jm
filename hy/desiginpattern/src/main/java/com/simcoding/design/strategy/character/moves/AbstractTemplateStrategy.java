@@ -1,6 +1,6 @@
 package com.simcoding.design.strategy.character.moves;
 
-import com.simcoding.design.strategy.Main;
+import com.simcoding.design.strategy.TestMain;
 import com.simcoding.design.strategy.character.Direction;
 
 /**
@@ -12,7 +12,7 @@ public abstract class AbstractTemplateStrategy implements MoveStrategy{
     @Override
     public int moveY(Direction dir, int curY) {
         int next = handleY(dir, curY);
-        if(!(next < Main.map.length && next >= 0 )) return curY;
+        if(!(next < TestMain.map.length && next >= 0 )) return curY;
         return next;
 
     }
@@ -20,7 +20,7 @@ public abstract class AbstractTemplateStrategy implements MoveStrategy{
     @Override
     public int moveX(Direction dir, int curX) {
         int next = handleX(dir, curX);
-        if(!(next < Main.map[0].length && next >= 0 )) return curX;
+        if(!(next < TestMain.map[0].length && next >= 0 )) return curX;
         return handleX(dir, next);
     }
 

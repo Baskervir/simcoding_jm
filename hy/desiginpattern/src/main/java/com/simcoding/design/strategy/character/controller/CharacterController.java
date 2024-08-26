@@ -4,39 +4,52 @@ import com.simcoding.design.strategy.character.Direction;
 import com.simcoding.design.strategy.character.MainCharacter;
 import com.simcoding.design.strategy.character.moves.FootStretegy;
 import com.simcoding.design.strategy.character.moves.ReportDecorator;
+import com.simcoding.design.strategy.character.view.TerminalBasedUi;
+import com.simcoding.design.strategy.character.view.UserInterface;
 
 public class CharacterController {
 
     private MainCharacter character;
-
-    public ClientResult move(String command){
+    private UserInterface ui = new TerminalBasedUi();
+    public void move(String command){
 
         if(command.equals("INIT")) {
             this.character = new MainCharacter(new ReportDecorator(new FootStretegy()));
-            return new ClientResult(CommandResult.INIT);
+            this.ui.outInitCompletedMessage();
+            return;
         }
-        if(command.equals("END")) return new ClientResult(CommandResult.END);
+        if(command.equals("END")) {
+            this.ui.outGameEndMessage();
+            return;
+        }
 
-        if(character == null) return new ClientResult(CommandResult.ERROR);
+        if(character == null){
+            this.ui.outInvalidCommand(command);
+            return;
+        }
 
         switch (command){
 
             case "UP" :{
-                return new ClientResult(this.character.move(Direction.UP));
+                 this.ui.outMap(new ClientResult(this.character.move(Direction.UP)));
+                return;
             }
             case "DOWN" :{
-                return new ClientResult(this.character.move(Direction.DOWN));
+                this.ui.outMap(new ClientResult(this.character.move(Direction.DOWN)));
+                return;
             }
             case "LEFT" :{
-                return new ClientResult(this.character.move(Direction.LEFT));
+                this.ui.outMap(new ClientResult(this.character.move(Direction.LEFT)));
+                return;
             }
             case "RIGHT" :{
-                return new ClientResult(this.character.move(Direction.RIGHT));
+                this.ui.outMap(new ClientResult(this.character.move(Direction.RIGHT)));
+                return;
             }
 
         }
 
-        return new ClientResult(CommandResult.ERROR);
+        this.ui.outInvalidCommand(command);
 
     }
 
