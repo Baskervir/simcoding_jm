@@ -1,11 +1,11 @@
 package com.simcoding.design.strategy;
 
-import com.simcoding.design.strategy.character.Direction;
-import com.simcoding.design.strategy.character.MainCharacter;
+import com.simcoding.design.strategy.character.model.Direction;
+import com.simcoding.design.strategy.character.model.MainCharacter;
 import com.simcoding.design.strategy.character.config.InitializerFasade;
-import com.simcoding.design.strategy.character.moves.CarStrategy;
-import com.simcoding.design.strategy.character.moves.FootStretegy;
-import com.simcoding.design.strategy.character.moves.ReportDecorator;
+import com.simcoding.design.strategy.character.model.moves.CarStrategy;
+import com.simcoding.design.strategy.character.model.moves.FootStretegy;
+import com.simcoding.design.strategy.character.model.moves.ReportDecorator;
 
 /**
  * @apiNote 캐릭터를 이동시키는 어플리케이션이 있다.

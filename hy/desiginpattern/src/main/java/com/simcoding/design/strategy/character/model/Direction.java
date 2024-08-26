@@ -1,4 +1,4 @@
-package com.simcoding.design.strategy.character;
+package com.simcoding.design.strategy.character.model;
 
 public enum Direction {
     UP(-1,0),

@@ -1,6 +1,6 @@
-package com.simcoding.design.strategy.character.moves;
+package com.simcoding.design.strategy.character.model.moves;
 
-import com.simcoding.design.strategy.character.Direction;
+import com.simcoding.design.strategy.character.model.Direction;
 
 /**
 /

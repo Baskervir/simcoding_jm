@@ -1,12 +1,6 @@
 package com.simcoding.design.strategy;
 
-import com.simcoding.design.strategy.character.Direction;
-import com.simcoding.design.strategy.character.MainCharacter;
-import com.simcoding.design.strategy.character.config.InitializerFasade;
 import com.simcoding.design.strategy.character.controller.CharacterController;
-import com.simcoding.design.strategy.character.moves.CarStrategy;
-import com.simcoding.design.strategy.character.moves.FootStretegy;
-import com.simcoding.design.strategy.character.moves.ReportDecorator;
 
 import java.util.Scanner;
 

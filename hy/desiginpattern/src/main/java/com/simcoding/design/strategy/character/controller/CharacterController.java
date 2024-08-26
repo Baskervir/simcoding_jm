@@ -1,9 +1,9 @@
 package com.simcoding.design.strategy.character.controller;
 
-import com.simcoding.design.strategy.character.Direction;
-import com.simcoding.design.strategy.character.MainCharacter;
-import com.simcoding.design.strategy.character.moves.FootStretegy;
-import com.simcoding.design.strategy.character.moves.ReportDecorator;
+import com.simcoding.design.strategy.character.model.Direction;
+import com.simcoding.design.strategy.character.model.MainCharacter;
+import com.simcoding.design.strategy.character.model.moves.FootStretegy;
+import com.simcoding.design.strategy.character.model.moves.ReportDecorator;
 import com.simcoding.design.strategy.character.view.TerminalBasedUi;
 import com.simcoding.design.strategy.character.view.UserInterface;
 

@@ -1,7 +1,7 @@
-package com.simcoding.design.strategy.character.moves;
+package com.simcoding.design.strategy.character.model.moves;
 
 import com.simcoding.design.strategy.TestMain;
-import com.simcoding.design.strategy.character.Direction;
+import com.simcoding.design.strategy.character.model.Direction;
 
 /**
  * @apiNote 공통된 코드를, 부모 abstract 클래스에 모아두고,
