@@ -1,9 +1,11 @@
 package com.simcoding.design.strategy.character.view;
 
+import com.simcoding.design.strategy.Main;
 import com.simcoding.design.strategy.character.controller.CharacterController;
 import com.simcoding.design.strategy.character.controller.ClientResult;
 import com.simcoding.design.strategy.character.controller.CommandResult;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TerminalBasedUi implements UserInterface{
@@ -52,14 +54,36 @@ public class TerminalBasedUi implements UserInterface{
             }
 
             if (move.equals(CommandResult.MOVE)){
+                clear();
                 int[] curPosition = result.getCurPosition();
-                System.out.println("너의 현재 위치는 ?");
-                System.out.println("x =>>>>>>>>> "+curPosition[0]);
-                System.out.println("y =>>>>>>>>> "+curPosition[1]);
+
+                int[][] map = Main.map;
+
+                for (int i = 0; i < map.length; i++) {
+                    StringBuilder b= new StringBuilder();
+                    for (int i1 = 0; i1 < map[i].length; i1++) {
+                        if(i == curPosition[1] && i1 == curPosition[0]){
+                            b.append("*");
+                        }else{
+                            b.append("O");
+                        }
+                    }
+                    System.out.println(b.toString());
+                }
+//
+//                System.out.println("너의 현재 위치는 ?");
+//                System.out.println("x =>>>>>>>>> "+curPosition[0]);
+//                System.out.println("y =>>>>>>>>> "+curPosition[1]);
 
             }
 
 
+        }
+    }
+
+    private void clear() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
         }
     }
 }
