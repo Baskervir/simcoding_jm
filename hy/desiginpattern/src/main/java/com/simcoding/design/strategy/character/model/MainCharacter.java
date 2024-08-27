@@ -1,5 +1,6 @@
 package com.simcoding.design.strategy.character.model;
 
+import com.simcoding.design.strategy.character.externals.ExternalService;
 import com.simcoding.design.strategy.character.model.moves.MoveStrategy;
 
 /**
@@ -9,7 +10,6 @@ public class MainCharacter {
 
     private int curX = 0;
     private int curY = 0;
-
     private MoveStrategy transport;
 
     public MainCharacter(MoveStrategy transport) {

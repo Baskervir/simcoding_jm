@@ -1,5 +1,6 @@
 package com.simcoding.design.strategy.character.controller;
 
+import com.simcoding.design.strategy.character.externals.ExternalServiceSubject;
 import com.simcoding.design.strategy.character.model.Direction;
 import com.simcoding.design.strategy.character.model.MainCharacter;
 import com.simcoding.design.strategy.character.model.moves.FootStretegy;
@@ -11,6 +12,8 @@ public class CharacterController {
 
     private MainCharacter character;
     private UserInterface ui = new TerminalBasedUi();
+    private ExternalServiceSubject subject = new ExternalServiceSubject();
+
     public void move(String command){
 
         if(command.equals("INIT")) {
@@ -31,19 +34,19 @@ public class CharacterController {
         switch (command){
 
             case "UP" :{
-                 this.ui.outMap(new ClientResult(this.character.move(Direction.UP)));
+                moveAndNotify(Direction.UP);
                 return;
             }
             case "DOWN" :{
-                this.ui.outMap(new ClientResult(this.character.move(Direction.DOWN)));
+                moveAndNotify(Direction.DOWN);
                 return;
             }
             case "LEFT" :{
-                this.ui.outMap(new ClientResult(this.character.move(Direction.LEFT)));
+                moveAndNotify(Direction.LEFT);
                 return;
             }
             case "RIGHT" :{
-                this.ui.outMap(new ClientResult(this.character.move(Direction.RIGHT)));
+                moveAndNotify(Direction.RIGHT);
                 return;
             }
 
@@ -51,6 +54,11 @@ public class CharacterController {
 
         this.ui.outInvalidCommand(command);
 
+    }
+
+    private void moveAndNotify(Direction up) {
+        this.ui.outMap(new ClientResult(this.character.move(up)));
+        this.subject.notifyObservers(this.character);
     }
 
 }
