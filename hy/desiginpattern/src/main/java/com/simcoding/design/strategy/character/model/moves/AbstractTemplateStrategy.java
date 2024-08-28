@@ -1,6 +1,6 @@
 package com.simcoding.design.strategy.character.model.moves;
 
-import com.simcoding.design.strategy.TestMain;
+import com.simcoding.design.strategy.character.TestMain;
 import com.simcoding.design.strategy.character.model.Direction;
 
 /**

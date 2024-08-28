@@ -1,7 +1,6 @@
 package com.simcoding.design.strategy.character.view;
 
-import com.simcoding.design.strategy.Main;
-import com.simcoding.design.strategy.TestMain;
+import com.simcoding.design.strategy.character.TestMain;
 import com.simcoding.design.strategy.character.controller.ClientResult;
 
 public class TerminalBasedUi implements UserInterface{

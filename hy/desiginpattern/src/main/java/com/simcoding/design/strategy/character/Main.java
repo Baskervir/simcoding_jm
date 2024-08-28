@@ -1,4 +1,4 @@
-package com.simcoding.design.strategy;
+package com.simcoding.design.strategy.character;
 
 import com.simcoding.design.strategy.character.controller.CharacterController;
 
