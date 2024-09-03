@@ -43,12 +43,12 @@ public class TestExecutor {
         );
     }
 
-    static private void logTimeLaps(String marker, Runnable r){
+    static public void logTimeLaps(String marker, Runnable r){
         long start = System.currentTimeMillis();
         r.run();
         long end = System.currentTimeMillis() - start;
         Duration duration = Duration.ofMillis(end);
-        System.out.println("timelaps : "+ duration.getSeconds()+" 초"+" "+duration.toMillis());
+        System.out.println(marker+" timelaps : "+ duration.getSeconds()+" 초"+" "+duration.toMillis());
     }
 
 }

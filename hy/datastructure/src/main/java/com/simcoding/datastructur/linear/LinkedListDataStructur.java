@@ -3,13 +3,13 @@ package com.simcoding.datastructur.linear;
 import com.simcoding.TestExecutor;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayDataStructur {
-
+public class LinkedListDataStructur {
     public static void main(String[] args) {
-        //초기값을 주는 것과 안 주는 것의 차이도 함께 비교하기
-        List<Integer> arrayList = new ArrayList<>();
+
+        List<Integer> arrayList = new LinkedList<>();
         TestExecutor.add100_000_00Elements(arrayList);
         TestExecutor.removeRandomIndexFor1000Times(arrayList);
         TestExecutor.accRandomElementFor10000Times(arrayList);
@@ -18,5 +18,4 @@ public class ArrayDataStructur {
         System.out.println(arrayList.size());
 
     }
-
 }
