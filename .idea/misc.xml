@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/hy/tdd/pom.xml" />
-        <option value="$PROJECT_DIR$/hy/junit5/pom.xml" />
-        <option value="$PROJECT_DIR$/hy/updown/pom.xml" />
-        <option value="$PROJECT_DIR$/jm/tdd/pom.xml" />
-        <option value="$PROJECT_DIR$/jm/junit5/pom.xml" />
-        <option value="$PROJECT_DIR$/jm/updown/pom.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
