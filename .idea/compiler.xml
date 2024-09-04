@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tdd (1)" />
         <module name="tdd (2)" />
-        <module name="tdd (3)" />
         <module name="tdd" />
+        <module name="tdd (3)" />
         <module name="tdd (4)" />
         <module name="tdd (5)" />
       </profile>
