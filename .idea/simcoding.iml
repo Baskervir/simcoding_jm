@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jm/mvcPatternSubject/WordRelay" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/subject/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hy/datastructure/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/DataLocality" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
