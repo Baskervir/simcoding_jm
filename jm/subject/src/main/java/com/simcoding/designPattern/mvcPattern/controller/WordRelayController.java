@@ -12,44 +12,44 @@ public class WordRelayController {
         this.view = view;
     }
 
-    public void execute() {
-        view.welcomeMessage();
-
-        String startWord = view.settingGame();
-        model.updatePreviousWord(startWord);
+    // start startWord
+    public void start(String startWord){
         view.startMessage();
+        model.updatePreviousWord(startWord);
+    }
 
-        while (true) {
-            String previousWord = model.getPreviousWord();
-            view.playingGame(previousWord);
-
-            String newWord = view.getNextWord(previousWord);
-
-            if (model.isCorrectNextWord(newWord)) {
-                model.updatePreviousWord(newWord);
-                view.correctMessage();
-            } else {
-                view.incorrectMessage();
-            }
-
-            if (newWord.equalsIgnoreCase("end")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("restart")) {
-                execute();
-            }
-
-            if (newWord.equalsIgnoreCase("끝")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("재시작")) {
-                execute();
-            }
-
+    // playingGame nextWord   ( 명령어 제시어 )
+    public void playingGame(String nextWord){
+        if (model.isCorrectNextWord(nextWord)) {
+            model.updatePreviousWord(nextWord);
+            view.correctMessage();
+        } else {
+            view.incorrectMessage();
         }
     }
+
+    // restart {word}
+    public void restart(String word){
+
+        model.updatePreviousWord(word);
+        view.startMessage();
+
+    }
+
+    // showPrevWord
+    public void showPreviousWord(){
+        String previousWord = model.getPreviousWord();
+        view.playingGame(previousWord);
+        view.getNextWord(previousWord);
+    }
+
+    // showWelcome
+    public void showWelcome(){
+        view.welcomeMessage();
+    }
+
+    public void showEnd(){
+        view.endMessage();
+    }
+
 }

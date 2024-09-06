@@ -23,9 +23,8 @@ public class WordRelayView {
         }
     }
 
-    public String getNextWord(String previousWord) {
+    public void getNextWord(String previousWord) {
         System.out.print("Input next Word :");
-        return sc.nextLine();
     }
 
     public void sendStatusMessage(String status) {

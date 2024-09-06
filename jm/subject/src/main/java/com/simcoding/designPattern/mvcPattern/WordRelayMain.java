@@ -6,9 +6,8 @@ import com.simcoding.designPattern.mvcPattern.view.WordRelayView;
 
 public class WordRelayMain {
     public static void main(String[] args) {
-        WordRelayModel model = new WordRelayModel();
-        WordRelayView view = new WordRelayView();
-        WordRelayController controller = new WordRelayController(model, view);
-        controller.execute();
+
+            UserTerminalWas was = new UserTerminalWas(new WordRelayController(new WordRelayModel(), new WordRelayView()));
+            was.listen();
     }
 }
