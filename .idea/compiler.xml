@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tdd (1)" />
-        <module name="tdd (2)" />
-        <module name="tdd" />
-        <module name="tdd (3)" />
         <module name="tdd (4)" />
-        <module name="tdd (5)" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tdd" target="1.8" />
+      <module name="tdd (1)" target="1.8" />
+      <module name="tdd (2)" target="1.8" />
+      <module name="tdd (3)" target="1.8" />
+      <module name="tdd (5)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
