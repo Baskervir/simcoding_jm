@@ -1,55 +1,41 @@
 package com.simcoding.designPattern.mvcPattern.controller;
 
+import com.simcoding.designPattern.mvcPattern.GameManager;
 import com.simcoding.designPattern.mvcPattern.model.WordRelayModel;
 import com.simcoding.designPattern.mvcPattern.view.WordRelayView;
 
 public class WordRelayController {
     private WordRelayModel model;
     private WordRelayView view;
+    private GameManager manager;
 
     public WordRelayController(WordRelayModel model, WordRelayView view) {
         this.model = model;
         this.view = view;
+        this.manager = new GameManager(model, view);
     }
 
-    public void execute() {
+    public void welcomeMessage() {
         view.welcomeMessage();
+    }
 
-        String startWord = view.settingGame();
-        model.updatePreviousWord(startWord);
+    public void startGame(String startWord) {
         view.startMessage();
+    }
 
-        while (true) {
-            String previousWord = model.getPreviousWord();
-            view.playingGame(previousWord);
+    public void exitGame() {
+        view.endMessage();
+    }
 
-            String newWord = view.getNextWord(previousWord);
+    public void sendStatus() {
+        view.showManual();
+    }
 
-            if (model.isCorrectNextWord(newWord)) {
-                model.updatePreviousWord(newWord);
-                view.correctMessage();
-            } else {
-                view.incorrectMessage();
-            }
+    public void providedNextWord(String nextWord) {
+        manager.gameProcess(nextWord);
+    }
 
-            if (newWord.equalsIgnoreCase("end")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("restart")) {
-                execute();
-            }
-
-            if (newWord.equalsIgnoreCase("끝")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("재시작")) {
-                execute();
-            }
-
-        }
+    public void showPreviousWord() {
+        model.getPreviousWord();
     }
 }
