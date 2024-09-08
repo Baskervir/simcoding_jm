@@ -13,6 +13,8 @@ public class UserTerminalWas {
     // 사용자와 ------ 게임 간의 인터페이스가 정의가 되어 있어야 겠죠?
     public void listen(){
 
+        controller.showGameExplantion();
+
         while(true) {
             Scanner in = new Scanner(System.in);
             String userInput = in.nextLine();
@@ -25,7 +27,7 @@ public class UserTerminalWas {
             if (command.startsWith("playingGame")) {
                 controller.playingGame(requestObject[1]);
             }
-
+            // 자바 자료구조?
             if (command.startsWith("start")) {
                 controller.start(requestObject[1]);
             }

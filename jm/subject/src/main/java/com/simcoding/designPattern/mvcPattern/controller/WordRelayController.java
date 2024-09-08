@@ -16,10 +16,12 @@ public class WordRelayController {
     public void start(String startWord){
         view.startMessage();
         model.updatePreviousWord(startWord);
+        view.proptUserToTypeInNextWord();
     }
 
     // playingGame nextWord   ( 명령어 제시어 )
     public void playingGame(String nextWord){
+
         if (model.isCorrectNextWord(nextWord)) {
             model.updatePreviousWord(nextWord);
             view.correctMessage();
@@ -52,4 +54,7 @@ public class WordRelayController {
         view.endMessage();
     }
 
+    public void showGameExplantion() {
+        view.showExplanation();
+    }
 }

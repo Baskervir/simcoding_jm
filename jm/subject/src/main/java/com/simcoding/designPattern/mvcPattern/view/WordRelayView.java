@@ -69,4 +69,18 @@ public class WordRelayView {
                 " _| |_ | | | || (__ | (_) || |   | |   |  __/| (__ | |_ \n" +
                 " \\___/ |_| |_| \\___| \\___/ |_|   |_|    \\___| \\___| \\__|");
     }
+
+    public void showExplanation() {
+        System.out.println("hello choose what youi want");
+        System.out.println("1. gameStart");
+        System.out.println("2. game restart");
+        System.out.println("if you want to play a game, press start!!!!");
+    }
+
+    public void proptUserToTypeInNextWord() {
+        System.out.println("what is your next word????");
+        System.out.println("1. showPrevWord to show the prev one");
+        System.out.println("2. showEnd");
+        System.out.println("3. playingGame nextWord");
+    }
 }
