@@ -83,4 +83,9 @@ public class WordRelayView {
         System.out.println("2. showEnd");
         System.out.println("3. playingGame nextWord");
     }
+    public void showManual() {
+        System.out.println("1. Start {word}");
+        System.out.println("2. exit");
+        System.out.println("3. Next {word}");
+    }
 }
