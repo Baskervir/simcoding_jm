@@ -1,36 +1,6 @@
 package com.simcoding.designPattern.mvcPattern.view;
 
-import java.util.Scanner;
-
 public class WordRelayView {
-    private Scanner sc;
-
-    public WordRelayView() {
-        sc = new Scanner(System.in);
-    }
-
-    public String settingGame() {
-        System.out.println("If you want Start Game. Please input first Word.");
-        System.out.print("Input Start Word : ");
-        return sc.nextLine();
-    }
-
-    public void playingGame(String previousWord) {
-        if (previousWord == null) {
-            System.out.println("If you want Start Game. Input first Word.");
-        } else {
-            System.out.println("Previous word is : " + previousWord);
-        }
-    }
-
-    public String getNextWord(String previousWord) {
-        System.out.print("Input next Word :");
-        return sc.nextLine();
-    }
-
-    public void sendStatusMessage(String status) {
-        System.out.println();
-    }
 
     public void welcomeMessage() {
         System.out.println("=== === === === === === === ===");
@@ -69,5 +39,20 @@ public class WordRelayView {
                 "  | |  | '_ \\  / __| / _ \\ | '__|| '__| / _ \\ / __|| __|\n" +
                 " _| |_ | | | || (__ | (_) || |   | |   |  __/| (__ | |_ \n" +
                 " \\___/ |_| |_| \\___| \\___/ |_|   |_|    \\___| \\___| \\__|");
+    }
+
+    public void showManual() {
+        System.out.println("1. Start {word}");
+        System.out.println("2. exit");
+        System.out.println("3. Next {word}");
+    }
+
+    public void playingGame(String previousWord) {
+        System.out.println("Previous word: " + previousWord);
+        System.out.print("Enter next word: ");
+    }
+
+    public String getNextWord() {
+        return " ";
     }
 }
