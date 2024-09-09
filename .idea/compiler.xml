@@ -7,13 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tdd" />
-        <module name="tdd (4)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="tdd (1)" target="1.8" />
       <module name="tdd (2)" target="1.8" />
       <module name="tdd (3)" target="1.8" />
+      <module name="tdd (4)" target="1.8" />
       <module name="tdd (5)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
