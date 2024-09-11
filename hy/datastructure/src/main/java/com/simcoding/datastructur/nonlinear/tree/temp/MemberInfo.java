@@ -1,9 +1,9 @@
 package com.simcoding.datastructur.nonlinear.tree;
 
-public class MemberNode{
+public class MemberInfo {
     private final String name;
     private final int age;
-    public MemberNode(String name, int age) {
+    public MemberInfo(String name, int age) {
         this.name = name;
         this.age = age;
     }
