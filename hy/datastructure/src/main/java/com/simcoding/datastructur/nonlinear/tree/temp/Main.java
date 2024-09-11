@@ -1,10 +1,9 @@
-package com.simcoding.datastructur.nonlinear.tree;
+package com.simcoding.datastructur.nonlinear.tree.temp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
 
 public class Main {
     public static void main(String[] args) {

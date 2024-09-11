@@ -1,4 +1,4 @@
-package com.simcoding.datastructur.nonlinear.tree;
+package com.simcoding.datastructur.nonlinear.tree.temp;
 
 public class MemberInfo {
     private final String name;
