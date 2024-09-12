@@ -1,6 +1,5 @@
 package com.simcoding.designPattern.mvcPattern.controller;
 
-import com.simcoding.designPattern.mvcPattern.GameManager;
 import com.simcoding.designPattern.mvcPattern.model.WordRelayModel;
 import com.simcoding.designPattern.mvcPattern.view.WordRelayView;
 
