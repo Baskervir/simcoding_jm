@@ -4,7 +4,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/jm/tdd/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/hy/tdd/pom.xml" />
+        <option value="$PROJECT_DIR$/hy/junit5/pom.xml" />
+        <option value="$PROJECT_DIR$/hy/updown/pom.xml" />
+>>>>>>> fork-jm
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
