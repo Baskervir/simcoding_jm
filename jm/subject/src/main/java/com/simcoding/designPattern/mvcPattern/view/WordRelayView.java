@@ -23,9 +23,8 @@ public class WordRelayView {
         }
     }
 
-    public String getNextWord(String previousWord) {
+    public void getNextWord(String previousWord) {
         System.out.print("Input next Word :");
-        return sc.nextLine();
     }
 
     public void sendStatusMessage(String status) {
@@ -69,5 +68,24 @@ public class WordRelayView {
                 "  | |  | '_ \\  / __| / _ \\ | '__|| '__| / _ \\ / __|| __|\n" +
                 " _| |_ | | | || (__ | (_) || |   | |   |  __/| (__ | |_ \n" +
                 " \\___/ |_| |_| \\___| \\___/ |_|   |_|    \\___| \\___| \\__|");
+    }
+
+    public void showExplanation() {
+        System.out.println("hello choose what youi want");
+        System.out.println("1. gameStart");
+        System.out.println("2. game restart");
+        System.out.println("if you want to play a game, press start!!!!");
+    }
+
+    public void proptUserToTypeInNextWord() {
+        System.out.println("what is your next word????");
+        System.out.println("1. showPrevWord to show the prev one");
+        System.out.println("2. showEnd");
+        System.out.println("3. playingGame nextWord");
+    }
+    public void showManual() {
+        System.out.println("1. Start {word}");
+        System.out.println("2. exit");
+        System.out.println("3. Next {word}");
     }
 }
