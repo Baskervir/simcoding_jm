@@ -8,17 +8,17 @@ import java.util.List;
 
 public class ArrayDataStructur {
 
-    public static void main(String[] args) {
-        //초기값을 주는 것과 안 주는 것의 차이도 함께 비교하기
-        List<Integer> linkedList = new LinkedList<>();
+        public static void main(String[] args) {
+                //초기값을 주는 것과 안 주는 것의 차이도 함께 비교하기
+                List<Integer> linkedList = new LinkedList<>();
 
-        TestExecutor.add100_000_00Elements(linkedList);
-        TestExecutor.accRandomElementFor10000Times(linkedList);
-        TestExecutor.removeRandomIndexFor1000Times(linkedList);
-        TestExecutor.insertElementAtRandomIndexFor10_000Times(linkedList);
-        System.out.println(linkedList.size());
+                TestExecutor.add100_000_00Elements(linkedList);
+                TestExecutor.accRandomElementFor10000Times(linkedList);
+                TestExecutor.removeRandomIndexFor1000Times(linkedList);
+                TestExecutor.insertElementAtRandomIndexFor10_000Times(linkedList);
+                System.out.println(linkedList.size());
 
-    }
+        }
 }
 
 /**

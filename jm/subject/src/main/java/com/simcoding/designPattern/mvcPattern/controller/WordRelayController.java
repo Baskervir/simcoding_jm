@@ -6,50 +6,75 @@ import com.simcoding.designPattern.mvcPattern.view.WordRelayView;
 public class WordRelayController {
     private WordRelayModel model;
     private WordRelayView view;
+    private GameManager manager;
 
     public WordRelayController(WordRelayModel model, WordRelayView view) {
         this.model = model;
         this.view = view;
+        this.manager = new GameManager(model, view);
     }
 
-    public void execute() {
-        view.welcomeMessage();
-
-        String startWord = view.settingGame();
+    // start startWord
+    public void start(String startWord){
+        view.startMessage();
         model.updatePreviousWord(startWord);
+        view.proptUserToTypeInNextWord();
+    }
+
+    // playingGame nextWord   ( 명령어 제시어 )
+    public void playingGame(String nextWord) {
+
+        if (model.isCorrectNextWord(nextWord)) {
+            model.updatePreviousWord(nextWord);
+            view.correctMessage();
+        } else {
+            view.incorrectMessage();
+        }
+    }
+    public void welcomeMessage() {
+        view.welcomeMessage();
+    }
+
+    public void startGame(String startWord) {
+        view.startMessage();
+    }
+
+    public void exitGame() {
+        view.endMessage();
+    }
+
+    public void sendStatus() {
+        view.showManual();
+    }
+
+    public void providedNextWord(String nextWord) {
+        manager.gameProcess(nextWord);
+    }
+
+    // restart {word}
+    public void restart(String word){
+
+        model.updatePreviousWord(word);
         view.startMessage();
 
-        while (true) {
-            String previousWord = model.getPreviousWord();
-            view.playingGame(previousWord);
+    }
+    // showPrevWord
+    public void showPreviousWord(){
+        String previousWord = model.getPreviousWord();
+        view.playingGame(previousWord);
+        view.getNextWord(previousWord);
+    }
 
-            String newWord = view.getNextWord(previousWord);
+    // showWelcome
+    public void showWelcome(){
+        view.welcomeMessage();
+    }
 
-            if (model.isCorrectNextWord(newWord)) {
-                model.updatePreviousWord(newWord);
-                view.correctMessage();
-            } else {
-                view.incorrectMessage();
-            }
+    public void showEnd(){
+        view.endMessage();
+    }
 
-            if (newWord.equalsIgnoreCase("end")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("restart")) {
-                execute();
-            }
-
-            if (newWord.equalsIgnoreCase("끝")) {
-                view.endMessage();
-                break;
-            }
-
-            if (newWord.equalsIgnoreCase("재시작")) {
-                execute();
-            }
-
-        }
+    public void showGameExplantion() {
+        view.showExplanation();
     }
 }
