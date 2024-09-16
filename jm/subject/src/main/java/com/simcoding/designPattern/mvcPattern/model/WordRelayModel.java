@@ -26,7 +26,6 @@ public class WordRelayModel {
         if (previousWord == null) {
             return true;
         }
-
         return !newWord.isEmpty() && previousWord.charAt(previousWord.length() - 1) == newWord.charAt(0);
     }
 
