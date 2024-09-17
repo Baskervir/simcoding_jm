@@ -3,7 +3,7 @@ package com.simcoding.designPattern.mvcPattern.view;
 import java.util.Scanner;
 
 public class WordRelayView {
-    private Scanner sc;
+    private final Scanner sc;
 
     public WordRelayView() {
         sc = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class WordRelayView {
     }
 
     public void showExplanation() {
-        System.out.println("hello choose what youi want");
+        System.out.println("hello choose what you want");
         System.out.println("1. gameStart");
         System.out.println("2. game restart");
         System.out.println("if you want to play a game, press start!!!!");
@@ -83,6 +83,7 @@ public class WordRelayView {
         System.out.println("2. showEnd");
         System.out.println("3. playingGame nextWord");
     }
+
     public void showManual() {
         System.out.println("1. Start {word}");
         System.out.println("2. exit");

@@ -7,8 +7,8 @@ import com.simcoding.designPattern.mvcPattern.view.WordRelayView;
 import java.util.Scanner;
 
 public class WordRelayServer {
-    private WordRelayController controller;
-    private Scanner scanner;
+    private final WordRelayController controller;
+    private final Scanner scanner;
 
     public WordRelayServer() {
         WordRelayModel model = new WordRelayModel();
@@ -18,41 +18,41 @@ public class WordRelayServer {
     }
 
     public void startGame() {
-        controller.welcomeMessage();
-        controller.sendStatus();
+        controller.showWelcome();
+        controller.showGameExplantion();
 
-        while(true) {
+        while (true) {
             System.out.println("Enter command: ");
-            String input = scanner.nextLine().toLowerCase();
+            String input = scanner.nextLine().trim().toLowerCase();
             String[] commands = input.split(" ", 2);
             String command = commands[0];
 
-
-            if (command.startsWith("start")) {
+            if (command.equals("start")) {
                 if (commands.length > 1) {
                     String startWord = commands[1];
-                    controller.startGame(startWord);
+                    controller.start(startWord);
                 } else {
                     System.out.println("Input start Word.");
                 }
-            }
-
-            if (command.startsWith("exit")) {
-                controller.exitGame();
+            } else if (command.equals("exit")) {
+                controller.showEnd();
                 break;
-            }
-
-            if (command.startsWith("next")) {
+            } else if (command.equals("next")) {
                 if (commands.length > 1) {
                     String nextWord = commands[1];
-                    controller.providedNextWord(nextWord);
+                    controller.playingGame(nextWord);
                 } else {
                     System.out.println("Input next Word.");
                 }
-            }
-
-            if (command.equalsIgnoreCase("prev")) {
+            } else if (command.equals("prev")) {
                 controller.showPreviousWord();
+            } else if (command.equals("showwelcome")) {
+                controller.showWelcome();
+            } else if (command.equals("showend")) {
+                controller.showEnd();
+                break;
+            } else {
+                System.out.println("Unknown command. Please try again.");
             }
         }
     }
