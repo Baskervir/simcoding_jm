@@ -1,4 +1,4 @@
-===비가중치 그래프 (Unweighted Graph)===
+===비가중치 그래프 (Unweighted GraphInterface.Graph)===
 
 1. 정의
    •각 엣지에 가중치가 없거나 모든 엣지의 가중치가 동일한 그래프

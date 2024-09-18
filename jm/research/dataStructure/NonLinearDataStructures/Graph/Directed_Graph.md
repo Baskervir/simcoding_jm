@@ -1,4 +1,4 @@
-===유향 그래프 (Directed Graph)===
+===유향 그래프 (Directed GraphInterface.Graph)===
 
 1. 정의
    •엣지에 방향이 있는 그래프
