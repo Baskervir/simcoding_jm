@@ -1,4 +1,4 @@
-package com.simcoding.datastructur.linear;ㅁ
+package com.simcoding.datastructur.linear;
 
 import com.simcoding.TestExecutor;
 
