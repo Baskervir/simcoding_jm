@@ -19,9 +19,11 @@ public class VulnerableCounter implements Counter {
 }
 
 class Main{
+    public static String name = "as";
     public static void main(String[] args) throws InterruptedException {
 
         VulnerableCounter counter = new VulnerableCounter();
+
         IntStream.range(0, 5)
                 .mapToObj(t -> getThread(counter))
                 .forEach(Thread::start);
@@ -32,12 +34,13 @@ class Main{
 
     }
 
+
     private static Thread getThread(Counter counter){
         return new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 System.out.println(Thread.currentThread().getName() + " got number " + counter.getNext());
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(166);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
