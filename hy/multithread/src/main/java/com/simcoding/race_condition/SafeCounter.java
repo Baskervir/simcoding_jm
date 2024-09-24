@@ -10,19 +10,19 @@ import java.util.stream.IntStream;
  * 경쟁 조건이 발생
  *
  * **/
-public class VulnerableCounter implements Counter {
+public class SafeCounter implements Counter {
     private int cnt = 0;
     @Override
-    public int getNext() {
+    public synchronized int getNext() {
         return cnt++;
     }
 }
 
-class Main{
+class SafeMain{
     public static String name = "as";
     public static void main(String[] args) throws InterruptedException {
 
-        VulnerableCounter counter = new VulnerableCounter();
+        Counter counter = new SafeCounter();
 
         IntStream.range(0, 5)
                 .mapToObj(t -> getThread(counter))

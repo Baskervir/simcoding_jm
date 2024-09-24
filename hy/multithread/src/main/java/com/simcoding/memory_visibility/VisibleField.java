@@ -1,7 +1,7 @@
 package com.simcoding.memory_visibility;
 
-public class UnVisibleField {
-    private static boolean flag = false;
+public class VisibleField {
+    private volatile static boolean flag = false;
 
     public static void main(String[] args) {
         // 스레드 1: flag 값을 읽는 스레드
