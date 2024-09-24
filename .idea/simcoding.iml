@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/jm/junit5/src/test/java/com/simcoding/tdd/GraphWithMatrix" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/subject/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/ThreadExample" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/M-to-M TM" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-M TM" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-O TM" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
