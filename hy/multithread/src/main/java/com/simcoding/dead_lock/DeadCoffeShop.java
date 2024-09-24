@@ -1,7 +1,5 @@
 package com.simcoding.dead_lock;
 
-import com.simcoding.race_condition.Counter;
-
 import java.util.stream.IntStream;
 
 /**
@@ -17,7 +15,7 @@ public class DeadCoffeShop {
     private final Object coffeMachine = new Object();
     private final Object cup = new Object();
 
-    public void makeCoffe(){
+    public void makeCoffee(){
         String invokingThreadName = Thread.currentThread().getName();
 
         synchronized (coffeMachine){
@@ -42,7 +40,7 @@ public class DeadCoffeShop {
 class Main{
     public static void main(String[] args) throws InterruptedException {
         DeadCoffeShop shop = new DeadCoffeShop();
-        IntStream.range(0, 5)
+        IntStream.range(0, 3)
                 .mapToObj(t -> getThread(shop))
                 .forEach(Thread::start);
 
@@ -51,14 +49,17 @@ class Main{
     }
 
     private static Thread getThread(DeadCoffeShop shop){
-        return new Thread(() -> {
+        Thread thread = new Thread(() -> {
             Thread currentThread = Thread.currentThread();
-            if(isHashOfNameEvenNumber(currentThread)){
+            if (isHashOfNameEvenNumber(currentThread)) {
                 shop.cleanAllObject();
-            }else{
-                shop.makeCoffe();
+            } else {
+                shop.makeCoffee();
             }
         });
+        thread.setPriority(5);
+
+        return thread;
     }
 
     private static boolean isHashOfNameEvenNumber(Thread currentThread) {
