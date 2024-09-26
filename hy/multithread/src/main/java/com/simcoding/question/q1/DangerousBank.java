@@ -1,4 +1,4 @@
-package com.simcoding.question;
+package com.simcoding.question.q1;
 
 public class DangerousBank implements Bank {
 
