@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/M-to-M TM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-M TM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-O TM" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/dataStructure/Collection Framework/HashMap/HashMapExample" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
