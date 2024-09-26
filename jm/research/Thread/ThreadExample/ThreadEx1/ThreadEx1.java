@@ -1,3 +1,5 @@
+package ThreadEx1;
+
 class ThreadEx1 {
     public static void main(String[] args) {
         ThreadEx1_1 t1 = new ThreadEx1_1();
