@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-M TM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-O TM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/dataStructure/Collection Framework/HashMap/HashMapExample" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jm/research/dataStructure/Collection Framework/Lock Striping/LockStripingExample" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
