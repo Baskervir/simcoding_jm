@@ -11,9 +11,11 @@ import java.util.stream.IntStream;
  *
  * **/
 public class SafeCounter implements Counter {
-    private int cnt = 0;
+    private volatile int cnt = 0;
     @Override
-    public synchronized int getNext() {
+    public  int getNext() {
+        int t= 1;
+
         return cnt++;
     }
 }

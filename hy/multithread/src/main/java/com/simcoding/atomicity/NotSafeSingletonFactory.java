@@ -9,8 +9,11 @@ public class NotSafeSingletonFactory {
      * 데이터 정합성에 문제가 발생할 수 있는 코드
      * **/
     public static Object getObject(){
+
         if( veryVeryImportantObject == null ){
-            veryVeryImportantObject = new Object();
+            synchronized (veryVeryImportantObject) {
+                veryVeryImportantObject = new Object();
+            }
         }
         return veryVeryImportantObject;
     }
