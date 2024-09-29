@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Start {
+    int result = 0 ;
     public static void main(String[] args) throws InterruptedException {
 //         Cache cache = new EnhancedCache();
    //       Cache cache = new UnSafeCache();

@@ -1,27 +1,29 @@
 package com.simcoding.memory_visibility;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class VisibleField {
     private volatile static boolean flag = false;
+    static Integer result = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 스레드 1: flag 값을 읽는 스레드
         new Thread(() -> {
-            while (!flag) {
-                // flag가 false일 때 반복
+            synchronized (result) {
+                if (result % 2 == 0) {
+                    result += 1;
+                }
             }
-            System.out.println("Flag is now true!");
         }).start();
 
-        // 스레드 2: flag 값을 변경하는 스레드
         new Thread(() -> {
-            try {
-                Thread.sleep(1000); // 1초 대기
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if(result % 2 != 0) {
+                result +=1;
             }
-            flag = true;
-            System.out.println("Flag has been set to true.");
         }).start();
+
+        Thread.sleep(1000);
+        System.out.println(result);
     }
 
 }
