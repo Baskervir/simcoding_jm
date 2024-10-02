@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/jm/research/Thread/Model/O-to-O TM" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/dataStructure/Collection Framework/HashMap/HashMapExample" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/jm/research/dataStructure/Collection Framework/Lock Striping/LockStripingExample" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hy/multithread/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hy/multithread/src/test/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
