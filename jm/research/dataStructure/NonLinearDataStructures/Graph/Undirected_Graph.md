@@ -1,4 +1,4 @@
-===무향 그래프 (Undirected Graph)===
+===무향 그래프 (Undirected GraphInterface.Graph)===
 
 1. 정의
    •엣지에 방향이 없는 그래프

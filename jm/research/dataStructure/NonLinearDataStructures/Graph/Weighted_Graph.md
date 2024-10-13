@@ -1,4 +1,4 @@
-===가중치 그래프 (Weighted Graph)===
+===가중치 그래프 (Weighted GraphInterface.Graph)===
 
 1. 정의
    •엣지에 특정한 숫자값(가중치)이 할당된 그래프

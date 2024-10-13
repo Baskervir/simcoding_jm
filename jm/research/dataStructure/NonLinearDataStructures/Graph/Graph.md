@@ -1,4 +1,4 @@
-===그래프 (Graph)===
+===그래프 (GraphInterface.Graph)===
 
 1. 정의
    •정점 (Vertex)
